@@ -12,6 +12,99 @@
 
 ---
 
+## 2026-02-19（下午）| 服務區域全台擴展 + SEO 全台關鍵字
+
+### 完成項目
+
+#### 1. 服務區域擴展至全台 19 個
+- **北部（6）**: 台北市、新北市、基隆市、桃園市、新竹縣市、苗栗縣
+- **中部（5）**: 台中市、彰化縣、南投縣、雲林縣、嘉義縣市（主場）
+- **南部（3）**: 台南市、高雄市、屏東縣
+- **東部離島（4）**: 宜蘭縣、花蓮縣、台東縣、澎湖縣
+- **全台（1）**: 全台服務
+- 區域頁面按北/中/南/東分區顯示
+- 每個區域頁獨立 meta title/description/keywords，含地區+產品組合
+
+#### 2. SEO 全台地區關鍵字（70+ 組新增）
+- 新增 `tier3_regional` 關鍵字群
+- 每個地區 × 產品組合，例如：
+  - 高雄塑膠袋、高雄背心袋、高雄洞口袋、高雄平口袋、高雄印刷袋、高雄塑膠袋批發
+  - 台北塑膠袋、台北背心袋、台北塑膠袋批發
+  - 台中/台南/嘉義/桃園/新竹/彰化/雲林/屏東/宜蘭/花蓮/台東/基隆/澎湖 等全涵蓋
+- 區域詳情頁 H1 格式：`{地區名}背心袋・洞口袋・平口袋批發`
+
+#### 3. 產品中心頁修正
+- 標題改為「背心袋・洞口袋・平口袋・客製化印刷」
+- 描述移除所有舊產品（塑膠膜/繩/網/線/再製原料）
+- meta keywords 更新
+
+#### 4. 部署驗證
+- Build 成功：123 頁面，0 錯誤
+- `npx vercel --prod` 手動部署確認
+- 首頁、產品頁、區域頁全部正常載入
+
+### 修改檔案
+- `lib/constants.ts` — AREAS 從 10→19，SEO_KEYWORDS 新增 tier3_regional
+- `app/products/page.tsx` — metadata 更新
+- `app/areas/page.tsx` — 全面重寫（分區顯示）
+- `app/areas/[area]/page.tsx` — 全面重寫（聚焦背心袋/洞口袋/平口袋）
+- `app/page.tsx` — 首頁區域顯示方式調整
+
+---
+
+## 2026-02-19（上午）| 重大產品修正 + LINE 預留 + SEO 聚焦
+
+### 完成項目
+
+#### 1. 產品精簡（7→2）
+- **保留**：塑膠袋（背心袋・洞口袋・平口袋）、客製化印刷
+- **移除**：塑膠膜、塑膠繩、塑膠網、塑膠線、塑膠再製原料
+- 產品詳情頁內容全面重寫，聚焦三大袋型
+
+#### 2. 規格統一
+- 印刷：1-3色 或 單色雙面印刷（原為 1-6色）
+- 最低訂購量：150公斤起
+- 交貨時間：15-20天
+
+#### 3. SEO 關鍵字聚焦
+- 核心 SEO 目標：**統治背心袋、洞口袋、平口袋市場**
+- 首頁 H1：「背心袋・洞口袋・平口袋 專業製造・工廠直營」
+- SEO_KEYWORDS 4 個層級全面重寫
+- 底部 SEO 文案重寫
+
+#### 4. 服務頁更新
+- 移除「回收再製」服務
+- 保留 4 項：塑膠袋製造、OEM代工、客製化印刷、批發供應
+- 所有服務頁內容更新為正確規格
+
+#### 5. LINE 預留位
+- Header 頂部標語
+- Footer 聯繫資訊
+- CTASection（LINE 綠色按鈕）
+- 聯繫頁面
+- 機制：`COMPANY_INFO.lineUrl` 有值時自動顯示，目前為空字串待填入
+
+#### 6. 全站頁面更新
+- 首頁：Hero 文案、統計數據、Why Choose Us、FAQ、SEO 文案
+- 關於頁：公司簡介、核心競爭力、發展歷程
+- FAQ 頁：5 大類全部更新為正確規格
+- 聯繫頁：產品下拉選單更新（背心袋/洞口袋/平口袋/客製印刷/OEM/其他）
+
+### 修改檔案（11 個）
+- `lib/constants.ts` — 產品/服務/SEO 全面重寫
+- `app/page.tsx` — 首頁
+- `app/products/[slug]/page.tsx` — 產品詳情
+- `app/services/[slug]/page.tsx` — 服務詳情（移除回收）
+- `app/faq/page.tsx` — FAQ
+- `app/about/page.tsx` — 關於
+- `app/contact/page.tsx` — 聯繫（+LINE）
+- `components/Header.tsx` — 頂部標語
+- `components/Footer.tsx` — +LINE
+- `components/CTASection.tsx` — +LINE 按鈕
+- `WORK_LOG.md` — 工作日誌
+
+---
+
 ## 2026-02-18 ~ 2026-02-19 | 網站完整建置與部署
 
 ### 完成項目
@@ -21,67 +114,73 @@
 - 公司名稱、地址、電話、負責人（陳素貞）、資本額（NT$1,610,000）
 - 工廠登記號：99655111
 - 註冊商標：慶宗及圖 CHIN TZON（第00234983號，1984年）
-- 產品線：塑膠袋、塑膠膜、塑膠繩、塑膠網、塑膠線、塑膠再製原料
-- Facebook 照片因技術限制無法抓取，待用戶提供
 
-#### 2. SEO 關鍵字研究（50 組高轉化精準關鍵字）
-- **Tier 1 交易型（10組）**: 塑膠袋工廠、塑膠袋批發、塑膠袋代工、客製化塑膠袋、PE袋工廠、PP袋批發、HDPE袋批發、塑膠袋工廠直銷、嘉義塑膠袋工廠、南部塑膠袋代工
-- **Tier 2A 產品型（15組）**: 塑膠袋、PE袋、PP袋、OPP袋、夾鏈袋批發、垃圾袋批發、背心袋工廠、LDPE袋、塑膠膜批發、農業用膜、地膜、塑膠網批發、PP繩批發、塑膠繩工廠、塑膠線批發
-- **Tier 2B 應用型（10組）**: 食品包裝袋工廠、工業用塑膠袋、冷凍食品包裝袋、電商包裝袋、快遞袋批發、塑膠再生料批發、回收塑膠粒料、再生塑膠原料、五金零件袋、醫療用塑膠袋
-- **Tier 2C 決策型（5組）**: 塑膠袋廠商推薦、塑膠袋廠商比較、台灣塑膠袋製造商、塑膠袋OEM、塑膠袋ODM
-- **Tier 3 資訊型（10組）**: 塑膠袋種類、PE和PP差異、環保塑膠袋、生物可分解袋、塑膠袋印刷、塑膠袋印刷最低訂量、塑膠袋價格、塑膠袋規格尺寸、嘉義民雄工廠、台灣製塑膠袋
-
-#### 3. 專案建置
+#### 2. 專案建置
 - Next.js 16.1.6 + Tailwind CSS 4 + TypeScript
 - 手動初始化專案（避免 npm cache 權限問題）
 - 安裝依賴：next, react, react-dom, gray-matter, remark, remark-html, reading-time
 
-#### 4. 核心架構
-- `lib/constants.ts` — 公司資訊、7個產品、5個服務、10個區域、10個部落格分類、50組SEO關鍵字
-- `lib/schema.ts` — 8種 JSON-LD Schema 生成器（Organization, LocalBusiness, WebSite, Product, Service, Article, FAQ, Breadcrumb, Area）
+#### 3. 核心架構
+- `lib/constants.ts` — 公司資訊、產品、服務、區域、部落格分類、SEO關鍵字
+- `lib/schema.ts` — 8種 JSON-LD Schema 生成器
 - `lib/mdx.ts` — MDX 文章解析器（frontmatter, headings, reading time）
-- `app/layout.tsx` — 全站佈局 + Noto Sans TC 字型 + Organization/LocalBusiness/WebSite Schema
+- `app/layout.tsx` — 全站佈局 + Organization/LocalBusiness/WebSite Schema
 
-#### 5. 組件開發（8個）
+#### 4. 組件開發（8個）
 - Header（含手機漢堡選單 + 下拉子選單 + CTA）
 - Footer（4欄：公司/產品/服務/區域 + 商標資訊）
 - BreadcrumbNav, CTASection, FAQAccordion, ProductCard, TableOfContents, SchemaMarkup
 
-#### 6. 頁面開發（120頁）
-- **首頁**: Hero + 統計數據 + 產品卡片 + 為什麼選擇慶宗 + 服務項目 + 合作流程 + 區域 + FAQ + CTA + SEO文案
-- **7 個產品頁**: 塑膠袋/膜/繩/網/線/再生原料/客製化（每頁含 Product Schema + FAQ + 相關文章）
-- **5 個服務頁**: 製造/OEM代工/客製印刷/批發/回收（每頁含 Service Schema + FAQ）
-- **10 個區域頁**: 嘉義/台南/高雄/屏東/雲林/彰化/台中/南投/中南部/全台
-- **75 篇部落格文章**: 10 個分類（塑膠知識/包裝指南/產業動態/環保永續/產品應用/食品包裝/農業/工業/客製印刷/公司動態）
-- **10 個分類頁**
-- **其他**: 關於我們、聯繫我們（含表單）、FAQ（5大類19題）、案例展示（6個案例）、404
-- **技術頁**: sitemap.xml（自動含所有URL）、robots.txt
+#### 5. 頁面開發
+- 首頁、產品中心、服務項目、關於我們、聯繫我們、FAQ、案例展示
+- 產品詳情頁（generateStaticParams）
+- 服務詳情頁（generateStaticParams）
+- 區域詳情頁（generateStaticParams）
+- 部落格系統（列表+分類+文章內頁）
+- 75 篇 SEO 部落格文章（10 個分類）
+- sitemap.xml + robots.txt + 404
 
-#### 7. SEO 技術規格
-- 每頁獨立 title（含關鍵字） + meta description
-- Canonical URL + Open Graph + Twitter Cards
-- hreflang zh-TW
+#### 6. SEO 技術規格
+- 每頁獨立 title + meta description + canonical URL
+- Open Graph + Twitter Cards + hreflang zh-TW
 - JSON-LD Schema Markup（7種類型）
 - 麵包屑導航（含 BreadcrumbList Schema）
 - FAQ Schema（首頁、產品頁、服務頁、區域頁、FAQ頁）
-- 自動生成 sitemap.xml（120+ URLs）
-- next/image 自動圖片優化（WebP/AVIF）
+- 自動生成 sitemap.xml
 - 響應式設計（Mobile First）
 
-#### 8. 部署
+#### 7. 部署
 - GitHub repo: fish52063-web/qingzong-plastics
-- Vercel 部署成功：https://qingzong-plastics.vercel.app
-- 120 頁 SSG 預渲染，build 23 秒，0 錯誤
-
-### 待辦事項
-- [ ] 用戶提供 Facebook 照片後整合到網站
-- [ ] Google Search Console 提交 sitemap
-- [ ] 自訂域名綁定（待購買）
-- [ ] Google Analytics 4 設定
-- [ ] Google Business Profile 建立與優化
+- Vercel 部署成功
 
 ### 技術細節
-- Build: 120 pages, 0 errors, 23s on Vercel
 - 主色：藍色系 #1565c0（工業感）
 - 輔色：金色 #ffc107（專業感）
 - 灰色系：industrial gray #212121-#f5f5f5
+
+---
+
+## 目前網站狀態
+
+### 頁面統計
+- **總頁面數**: 123
+- **產品頁**: 2（塑膠袋、客製化印刷）
+- **服務頁**: 4（製造、OEM代工、客製印刷、批發）
+- **區域頁**: 19（全台各縣市）
+- **部落格**: 75 篇
+- **分類頁**: 10
+- **其他**: 首頁、關於、聯繫、FAQ、案例、sitemap、robots、404
+
+### SEO 關鍵字覆蓋
+- **核心產品（14組）**: 背心袋/洞口袋/平口袋 × 工廠/批發/印刷
+- **長尾產品（24組）**: 各種規格/價格/尺寸組合
+- **全台地區（70+組）**: 台北/新北/桃園/台中/台南/高雄等 × 塑膠袋/背心袋/洞口袋/平口袋/印刷袋/批發
+- **通用大字（12組）**: 塑膠袋/背心袋/購物袋推薦等
+
+### 待辦事項
+- [ ] 用戶提供 LINE ID 後填入 `lib/constants.ts`
+- [ ] Google Search Console 提交 sitemap
+- [ ] Google Analytics 4 設定
+- [ ] Google Business Profile 建立與優化
+- [ ] 自訂域名綁定（待購買）
+- [ ] 用戶提供實際產品照片替換預設圖片
