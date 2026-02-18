@@ -1,0 +1,27 @@
+{
+  "name": "qingzong-plastics",
+  "version": "1.0.0",
+  "description": "慶宗塑膠有限公司 - 專業塑膠製品製造商 since 1977",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.2.14",
+    "gray-matter": "^4.0.3",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "reading-time": "^1.5.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}
