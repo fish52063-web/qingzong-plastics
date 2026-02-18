@@ -7,12 +7,12 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateFAQSchema } from '@/lib/schema';
 
 const homeFAQs = [
-  { question: '慶宗塑膠的最低訂購量是多少？', answer: '依產品類型不同，一般塑膠袋最低訂購量約50公斤起，客製化印刷產品最低約100公斤起。歡迎來電詳詢，我們會依您的需求提供最適合的方案。' },
-  { question: '可以客製化印刷LOGO嗎？', answer: '可以！我們提供單色至多色印刷服務，可印製公司LOGO、品牌名稱、產品資訊等。提供設計稿後約7-10個工作天可完成。' },
-  { question: '交貨時間大約多久？', answer: '標準品通常3-5個工作天可出貨，客製化產品依數量及複雜度約7-15個工作天。急單可另外洽詢，我們會盡力配合您的需求。' },
-  { question: '是否提供免費樣品？', answer: '我們提供標準規格產品的免費樣品供您評估。客製化產品需收取少量打樣費用，下單後可折抵。' },
+  { question: '慶宗塑膠的最低訂購量是多少？', answer: '背心袋、洞口袋、平口袋統一最低訂購量150公斤起，客製化印刷產品也是150公斤起訂。歡迎來電詳詢。' },
+  { question: '可以客製化印刷LOGO嗎？', answer: '可以！我們提供1-3色印刷或單色雙面印刷服務，可印製公司LOGO、品牌名稱、產品資訊等。150公斤起訂，15-20天交貨。' },
+  { question: '交貨時間大約多久？', answer: '統一交貨時間為15-20天，依訂單數量可能有所調整。歡迎來電洽詢。' },
+  { question: '背心袋、洞口袋、平口袋有什麼差別？', answer: '背心袋有T恤型提手，最常見於超市和市場；洞口袋在袋口打洞作為提手，外觀較精美；平口袋無提手，適合食品、五金等包裝。' },
   { question: '服務範圍涵蓋哪些地區？', answer: '我們工廠位於嘉義，主要服務中南部地區（嘉義、台南、高雄、雲林、彰化、台中等）。大量訂單可配送全台，運費另計。' },
-  { question: '你們有哪些環保產品？', answer: '我們提供塑膠再製原料、可回收材質製品，並持續研發更環保的替代方案。響應循環經濟政策，減少塑膠廢棄物。' },
+  { question: '是否提供免費樣品？', answer: '我們提供標準規格產品的免費樣品供您評估。客製化產品需收取少量打樣費用，下單後可折抵。' },
 ];
 
 export default function HomePage() {
@@ -33,12 +33,12 @@ export default function HomePage() {
               創立於1977年 ・ 近50年製造經驗
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-              專業塑膠製品製造<br />
-              <span className="text-accent-300">工廠直營・品質保證</span>
+              背心袋・洞口袋・平口袋<br />
+              <span className="text-accent-300">專業製造・工廠直營</span>
             </h1>
             <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl leading-relaxed">
-              慶宗塑膠專營塑膠袋、塑膠膜、塑膠繩、塑膠網等產品製造與批發。
-              提供客製化印刷、OEM代工服務，從小量到大量訂單皆可配合。
+              慶宗塑膠專營背心袋、洞口袋、平口袋製造與批發。
+              提供1-3色客製化印刷、OEM代工服務，150公斤起訂，15-20天交貨。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -70,8 +70,8 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white rounded-xl shadow-xl p-6 md:p-8">
             {[
               { num: '47+', label: '年製造經驗', icon: '🏭' },
-              { num: '7+', label: '種產品線', icon: '📦' },
-              { num: '1000+', label: '合作客戶', icon: '🤝' },
+              { num: '150kg', label: '最低起訂量', icon: '📦' },
+              { num: '15-20', label: '天交貨', icon: '⏱️' },
               { num: '全台', label: '配送服務', icon: '🚚' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
@@ -90,7 +90,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-3">產品中心</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              從塑膠袋、塑膠膜到塑膠繩網，完整產品線滿足各行業需求。支援客製化規格與印刷服務。
+              專營背心袋、洞口袋、平口袋，支援客製化印刷服務。150公斤起訂，15-20天交貨。
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -118,12 +118,12 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: '🏭', title: '工廠直營', desc: '自有工廠生產製造，省去中間商加價，提供最具競爭力的價格。從原料採購到成品包裝一條龍作業。' },
-              { icon: '⏱️', title: '近50年經驗', desc: '1977年創立至今，累積近半世紀塑膠製造專業。豐富經驗確保品質穩定，技術實力深厚。' },
-              { icon: '🎯', title: '客製化服務', desc: '依客戶需求客製化規格、材質、厚度、尺寸。提供印刷服務，可印製LOGO及各式圖案文字。' },
-              { icon: '✅', title: '品質保證', desc: '嚴格品管流程，原料品質把關，確保每批產品品質一致。不良率極低，客戶回購率高。' },
-              { icon: '🚚', title: '準時交貨', desc: '完善的生產排程管理，標準品3-5天出貨，客製品7-15天交貨。急單可特別安排，配合度高。' },
-              { icon: '♻️', title: '環保永續', desc: '積極投入塑膠回收再製，提供再生原料產品。響應循環經濟，為環境永續盡一份心力。' },
+              { icon: '🏭', title: '工廠直營', desc: '自有工廠生產製造背心袋、洞口袋、平口袋，省去中間商加價，提供最具競爭力的價格。' },
+              { icon: '⏱️', title: '近50年經驗', desc: '1977年創立至今，累積近半世紀塑膠袋製造專業。豐富經驗確保品質穩定，技術實力深厚。' },
+              { icon: '🎯', title: '客製化印刷', desc: '提供1-3色印刷或單色雙面印刷，可印製LOGO、品牌名稱。150公斤起訂，滿足各種需求。' },
+              { icon: '✅', title: '品質保證', desc: '嚴格品管流程，原料品質把關，確保每批背心袋、洞口袋、平口袋品質一致。' },
+              { icon: '🚚', title: '準時交貨', desc: '完善的生產排程管理，統一15-20天交貨。工廠位於嘉義，服務全台中南部。' },
+              { icon: '📋', title: 'OEM代工', desc: '接受品牌代工、大量訂單生產。背心袋代工、洞口袋代工、平口袋代工，品質穩定。' },
             ].map((item, i) => (
               <div key={i} className="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow border border-gray-100">
                 <div className="text-4xl mb-4">{item.icon}</div>
@@ -225,19 +225,19 @@ export default function HomePage() {
       {/* SEO Text */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 text-sm text-gray-500 leading-relaxed">
-          <h2 className="text-lg font-bold text-gray-700 mb-3">慶宗塑膠 - 您最信賴的塑膠製品製造夥伴</h2>
+          <h2 className="text-lg font-bold text-gray-700 mb-3">慶宗塑膠 - 背心袋・洞口袋・平口袋專業製造工廠</h2>
           <p className="mb-3">
-            慶宗塑膠有限公司（CHIN TZON Plastics Co., Ltd.）成立於1977年，位於嘉義縣民雄鄉，是台灣中南部最具規模的塑膠製品製造工廠之一。
-            近50年來，我們專注於塑膠袋、塑膠膜、塑膠繩、塑膠網、塑膠線及塑膠再製原料的生產與銷售，服務客戶遍及嘉義、台南、高雄、雲林、彰化、台中等地。
+            慶宗塑膠有限公司（CHIN TZON Plastics Co., Ltd.）成立於1977年，位於嘉義縣民雄鄉，是台灣中南部專業的背心袋工廠、洞口袋工廠、平口袋工廠。
+            近50年來，我們專注於背心袋、洞口袋、平口袋的製造與批發，提供客製化印刷服務，服務客戶遍及嘉義、台南、高雄、雲林、彰化、台中等地。
           </p>
           <p className="mb-3">
-            我們提供完整的塑膠袋批發服務，包含PE袋、PP袋、OPP袋、背心袋、夾鏈袋、食品袋、垃圾袋等各式產品。
-            同時承接OEM代工訂單，提供客製化印刷服務，可依客戶需求製作特殊規格產品。
-            無論您是需要大量採購的批發商，還是有特殊需求的企業客戶，慶宗塑膠都能為您提供最優質的產品與服務。
+            我們提供背心袋批發、洞口袋批發、平口袋批發服務，最低150公斤起訂，15-20天交貨。
+            同時承接OEM代工訂單，提供1-3色印刷或單色雙面印刷服務，可印製LOGO、品牌名稱。
+            無論您是超市、市場、餐飲業者，還是需要品牌印刷袋的企業客戶，慶宗塑膠都能為您提供最優質的產品與服務。
           </p>
           <p>
             歡迎致電 {COMPANY_INFO.phoneDisplay} 洽詢，或填寫線上表單，我們將盡速為您報價服務。
-            塑膠袋工廠直營，價格實惠，品質穩定，交期準時 — 選擇慶宗，就是選擇放心。
+            背心袋工廠直營、洞口袋批發、平口袋製造 — 選擇慶宗，就是選擇放心。
           </p>
         </div>
       </section>

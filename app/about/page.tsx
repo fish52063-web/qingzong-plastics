@@ -39,7 +39,7 @@ export default function AboutPage() {
               近50年來，我們專注於塑膠製品的製造與銷售，從一間小型工廠發展為擁有完整生產線的專業製造商。
             </p>
             <p>
-              我們的產品涵蓋塑膠袋、塑膠膜、塑膠繩、塑膠網、塑膠線及塑膠再製原料等，
+              我們專營背心袋、洞口袋、平口袋的製造與批發，提供客製化印刷服務，
               服務客戶遍及嘉義、台南、高雄、雲林、彰化、台中等中南部地區，大量訂單更可配送全台。
             </p>
 
@@ -54,8 +54,8 @@ export default function AboutPage() {
               <li><strong>近50年製造經驗</strong>：累積豐富的技術經驗與產業知識，面對各種需求都能提供專業解決方案。</li>
               <li><strong>工廠直營</strong>：自有工廠生產，省去中間商成本，提供具競爭力的價格。</li>
               <li><strong>完整生產線</strong>：從原料到成品一條龍作業，品質掌控更精確。</li>
-              <li><strong>客製化能力</strong>：依客戶需求提供客製規格、印刷服務，滿足多元需求。</li>
-              <li><strong>環保永續</strong>：積極投入塑膠回收再製，響應循環經濟。</li>
+              <li><strong>客製化印刷</strong>：提供1-3色印刷或單色雙面印刷，可印製LOGO、品牌名稱。150公斤起訂。</li>
+              <li><strong>專注核心</strong>：專營背心袋、洞口袋、平口袋三大品類，專業聚焦，品質更好。</li>
             </ul>
 
             <h2>公司資訊</h2>
@@ -80,8 +80,8 @@ export default function AboutPage() {
               <li><strong>1984年</strong> — 註冊「慶宗及圖 CHIN TZON」商標</li>
               <li><strong>1990年代</strong> — 擴大生產規模，增設吹膜機、製袋機</li>
               <li><strong>2000年代</strong> — 拓展中南部市場，建立經銷網絡</li>
-              <li><strong>2010年代</strong> — 投入塑膠回收再製，響應環保趨勢</li>
-              <li><strong>2020年代</strong> — 持續提升產能與品質，擴大客製化服務</li>
+              <li><strong>2010年代</strong> — 深耕背心袋、洞口袋、平口袋市場</li>
+              <li><strong>2020年代</strong> — 持續提升產能與品質，擴大客製化印刷服務</li>
             </ul>
           </div>
         </div>

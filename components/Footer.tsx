@@ -34,6 +34,12 @@ export default function Footer() {
                 <span className="text-gray-300">營業時間：</span>
                 週一至五 {COMPANY_INFO.businessHours.weekday}
               </p>
+              {COMPANY_INFO.lineUrl && (
+                <p>
+                  <span className="text-gray-300">LINE：</span>
+                  <a href={COMPANY_INFO.lineUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#06C755]">加入好友諮詢</a>
+                </p>
+              )}
             </div>
           </div>
 

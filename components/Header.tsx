@@ -13,7 +13,7 @@ export default function Header() {
       {/* Top bar */}
       <div className="bg-primary-700 text-white text-sm">
         <div className="max-w-7xl mx-auto px-4 py-1.5 flex justify-between items-center">
-          <span>近50年專業塑膠製品製造經驗 | 工廠直營・品質保證</span>
+          <span>近50年專業製造 | 背心袋・洞口袋・平口袋 | 150kg起訂</span>
           <a href={COMPANY_INFO.phoneHref} className="hover:text-accent-300 transition-colors">
             {COMPANY_INFO.phoneDisplay}
           </a>
