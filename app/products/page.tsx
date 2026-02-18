@@ -7,9 +7,9 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: '產品中心 - 塑膠袋・塑膠膜・塑膠繩・塑膠網',
-  description: `${COMPANY_INFO.shortName}產品中心：塑膠袋、塑膠膜、塑膠繩、塑膠網、塑膠線、塑膠再製原料、客製化產品。工廠直營批發，支援OEM代工及客製印刷。`,
-  keywords: ['塑膠袋', '塑膠膜', '塑膠繩', '塑膠網', '塑膠袋批發', '塑膠袋工廠', 'PE袋', 'PP袋'],
+  title: '產品中心 - 背心袋・洞口袋・平口袋・客製化印刷',
+  description: `${COMPANY_INFO.shortName}產品中心：專營背心袋、洞口袋、平口袋製造批發，提供1-3色客製化印刷。工廠直營，150公斤起訂，15-20天交貨。`,
+  keywords: ['背心袋', '洞口袋', '平口袋', '塑膠袋批發', '塑膠袋工廠', '背心袋批發', '印刷袋', '客製化塑膠袋'],
   alternates: { canonical: '/products/' },
 };
 
@@ -25,7 +25,7 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">產品中心</h1>
           <p className="text-lg opacity-90 max-w-2xl">
-            慶宗塑膠提供完整塑膠製品產品線，從塑膠袋、塑膠膜到塑膠繩網，滿足各行業包裝需求。所有產品工廠直營生產，品質穩定可靠。
+            慶宗塑膠專營背心袋、洞口袋、平口袋製造與批發，提供1-3色客製化印刷服務。工廠直營，150公斤起訂，15-20天交貨。
           </p>
         </div>
       </section>

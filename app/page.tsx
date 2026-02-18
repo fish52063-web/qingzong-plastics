@@ -190,13 +190,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-3">服務區域</h2>
-            <p className="text-gray-600">工廠位於嘉義，服務涵蓋全台中南部，大量訂單可配送全台</p>
+            <p className="text-gray-600">工廠位於嘉義，背心袋、洞口袋、平口袋批發配送全台各縣市</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {AREAS.map(a => (
-              <Link key={a.slug} href={`/areas/${a.slug}/`} className="bg-white rounded-lg p-4 text-center hover:shadow-md transition-shadow border border-gray-100 group">
-                <div className="font-bold text-gray-800 group-hover:text-primary-600 transition-colors">{a.name}</div>
-                <div className="text-xs text-gray-500 mt-1">{a.description.slice(0, 12)}</div>
+              <Link key={a.slug} href={`/areas/${a.slug}/`} className="bg-white rounded-lg px-4 py-2.5 hover:shadow-md transition-shadow border border-gray-100 group">
+                <span className="font-bold text-gray-800 group-hover:text-primary-600 transition-colors text-sm">{a.name}</span>
               </Link>
             ))}
           </div>

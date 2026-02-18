@@ -17,8 +17,12 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const areaData = AREAS.find(a => a.slug === area);
   if (!areaData) return {};
   return {
-    title: `${areaData.name}塑膠袋批發・塑膠製品供應 | ${COMPANY_INFO.shortName}`,
-    description: `${COMPANY_INFO.shortName}${areaData.name}服務：塑膠袋批發、塑膠膜、塑膠繩網供應、客製化印刷、OEM代工。${areaData.description}`,
+    title: `${areaData.name}背心袋・洞口袋・平口袋批發 | ${COMPANY_INFO.shortName}`,
+    description: `${COMPANY_INFO.shortName}${areaData.name}服務：背心袋批發、洞口袋批發、平口袋批發、塑膠袋印刷、客製化印刷袋。${areaData.description}150公斤起訂，15-20天交貨。`,
+    keywords: [
+      `${areaData.name}塑膠袋`, `${areaData.name}背心袋`, `${areaData.name}洞口袋`,
+      `${areaData.name}平口袋`, `${areaData.name}印刷袋`, `${areaData.name}塑膠袋批發`,
+    ],
     alternates: { canonical: `/areas/${area}/` },
   };
 }
@@ -29,9 +33,10 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
   if (!areaData) notFound();
 
   const faqs = [
-    { question: `${areaData.name}可以配送嗎？`, answer: `可以！${areaData.description}我們提供定期配送服務，達一定金額可免運費。歡迎來電詳詢。` },
-    { question: `${areaData.name}的交貨時間？`, answer: `一般標準品3-5個工作天，客製品7-15天。${areaData.name}地區配送通常1-2天送達。` },
-    { question: `${areaData.name}有業務服務嗎？`, answer: `有！我們有專人服務${areaData.name}地區客戶，可安排到府拜訪洽談。` },
+    { question: `${areaData.name}可以配送背心袋嗎？`, answer: `可以！我們提供${areaData.name}地區背心袋、洞口袋、平口袋批發配送服務。150公斤起訂，15-20天交貨。` },
+    { question: `${areaData.name}塑膠袋印刷服務？`, answer: `我們提供1-3色印刷或單色雙面印刷，可印製LOGO、品牌名稱。${areaData.name}地區皆可配送，150公斤起訂。` },
+    { question: `${areaData.name}最低訂購量多少？`, answer: `背心袋、洞口袋、平口袋統一最低訂購量150公斤起，${areaData.name}地區歡迎來電洽詢。` },
+    { question: `${areaData.name}有專人服務嗎？`, answer: `有！我們提供${areaData.name}地區專人服務，歡迎來電 ${COMPANY_INFO.phoneDisplay} 洽詢。` },
   ];
 
   return (
@@ -48,7 +53,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
 
       <section className="bg-gradient-to-r from-primary-700 to-primary-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-2">{areaData.name} — 塑膠製品供應服務</h1>
+          <h1 className="text-4xl font-bold mb-2">{areaData.name}背心袋・洞口袋・平口袋批發</h1>
           <p className="text-lg opacity-90">{areaData.description}</p>
         </div>
       </section>
@@ -61,33 +66,38 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
           ]} />
 
           <div className="prose max-w-none">
-            <h2>{areaData.name}塑膠製品供應</h2>
+            <h2>{areaData.name}塑膠袋批發供應</h2>
             <p>
-              慶宗塑膠為{areaData.name}地區客戶提供全系列塑膠製品供應服務。
-              我們的工廠位於嘉義縣民雄鄉，交通便利，配送{areaData.name}快速方便。
-              無論您是需要塑膠袋批發、塑膠膜供應、還是客製化印刷服務，我們都能滿足您的需求。
+              慶宗塑膠為{areaData.name}地區客戶提供背心袋、洞口袋、平口袋批發配送服務。
+              工廠位於嘉義縣民雄鄉，近50年專業製造經驗，工廠直營價格最優惠。
+              {areaData.name}地區客戶可享穩定供貨、準時配送的專業服務。
             </p>
 
-            <h2>提供產品</h2>
+            <h2>{areaData.name}可供應產品</h2>
+            <ul>
+              <li><strong>背心袋</strong>：超市、市場、餐飲外帶最常用，{areaData.name}地區大量批發配送</li>
+              <li><strong>洞口袋</strong>：打洞提手袋，適合品牌商店、服飾店、禮品店</li>
+              <li><strong>平口袋</strong>：無提手包裝袋，適合食品、五金、工業包裝</li>
+              <li><strong>客製化印刷袋</strong>：1-3色印刷或單色雙面印刷，可印LOGO、品牌名稱</li>
+            </ul>
+
+            <h2>{areaData.name}訂購資訊</h2>
+            <ul>
+              <li><strong>最低訂購量</strong>：150公斤起</li>
+              <li><strong>交貨時間</strong>：15-20天</li>
+              <li><strong>印刷服務</strong>：1-3色 / 單色雙面印刷</li>
+              <li><strong>配送方式</strong>：物流配送到府</li>
+            </ul>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6 mb-8">
             {PRODUCTS.map(p => (
               <Link key={p.slug} href={`/products/${p.slug}/`} className="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors group">
                 <div className="text-3xl mb-2">{p.icon}</div>
                 <div className="text-sm font-medium text-gray-700 group-hover:text-primary-600">{p.name}</div>
+                <div className="text-xs text-gray-500 mt-1">{p.shortDesc}</div>
               </Link>
             ))}
-          </div>
-
-          <div className="prose max-w-none">
-            <h2>{areaData.name}服務優勢</h2>
-            <ul>
-              <li>專人服務：{areaData.name}地區有專屬業務人員，可到府拜訪洽談</li>
-              <li>快速配送：標準品下單後1-2天配送到府</li>
-              <li>彈性訂單：大小訂單皆可配合，量大享優惠</li>
-              <li>售後保障：品質問題快速處理，讓您安心無虞</li>
-            </ul>
           </div>
 
           <div className="mt-8">
@@ -97,7 +107,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
         </div>
       </section>
 
-      <CTASection title={`${areaData.name}客戶專線`} subtitle={`歡迎${areaData.name}地區客戶來電洽詢，我們提供最優惠的價格及最快速的配送服務。`} />
+      <CTASection title={`${areaData.name}客戶專線`} subtitle={`歡迎${areaData.name}地區客戶來電洽詢背心袋、洞口袋、平口袋批發報價。150公斤起訂，15-20天交貨。`} />
     </>
   );
 }
